@@ -1,9 +1,18 @@
 {
-  "name": "my-first-repo",
-  "private": true,
+  "name": "firstplaywrighttest",
+  "version": "1.0.0",
+  "main": "index.js",
   "scripts": {
-    "test": "npm --prefix firstPlaywrightTest test",
-    "test:e2e": "npm --prefix firstPlaywrightTest run test:e2e",
-    "report": "npm --prefix firstPlaywrightTest run report"
+    "test": "playwright test",
+    "test:e2e": "playwright test tests/e2e.spec.js",
+    "report": "playwright show-report"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@playwright/test": "^1.60.0",
+    "@types/node": "^25.9.1"
   }
 }
