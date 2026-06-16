@@ -22,18 +22,21 @@ jobs:
 
             - name: Run UI tests
               run: npm run test:ui -- --reporter=html
-              env: PLAYWRIGHT_HTML_REPORT: playwright-report-ui
+              env: 
+                PLAYWRIGHT_HTML_REPORT: playwright-report-ui
 
             - name: Run API tests
               run: npm run test:api -- --reporter=html 
-              env: PLAYWRIGHT_HTML_REPORT: playwright-report-api
+              env: 
+                PLAYWRIGHT_HTML_REPORT: playwright-report-api
 
             - name: Upload UI test report 
               if: always() 
               uses: actions/upload-artifact@v4 
               with: 
                 name: playwright-report-ui 
-                path: playwright-report-ui/ retention-days: 7
+                path: playwright-report-ui/ 
+                retention-days: 7
 
             - name: Upload API test report 
               if: always() 
