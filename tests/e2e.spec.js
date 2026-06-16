@@ -8,7 +8,7 @@ const { CheckoutCompletePage } = require('../pages/checkout-complete.page');
 
 test.describe('E2E: полный цикл покупки', () => {
 
-    test('покупка самого дорогого товара', async ({ page }) => {
+    test('покупка самого дорогого товара @ui', async ({ page }) => {
         const loginPage = new LoginPage(page);
         const inventoryPage = new InventoryPage(page);
         const cartPage = new CartPage(page);

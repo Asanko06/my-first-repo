@@ -50,7 +50,7 @@ async function getToken(request) {
 test.describe('API-тесты для Restful_booker', () => {
     test.describe.configure({ mode: 'serial' });
 
-    test('Создание бронирования', async ({request}) => {
+    test('Создание бронирования @api', async ({request}) => {
 
         const response = await request.post(`${baseURL}/booking`, {
             data: requestBody,
@@ -66,7 +66,7 @@ test.describe('API-тесты для Restful_booker', () => {
         bookingId = responseBody.bookingid;
     });
 
-    test('Получение информации о бронировании', async ({request}) => {
+    test('Получение информации о бронировании @api', async ({request}) => {
 
         const response = await request.get(`${baseURL}/booking/${bookingId}`);
         const responseBody = await response.json();
@@ -77,7 +77,7 @@ test.describe('API-тесты для Restful_booker', () => {
     })
 
 
-    test('Обновление бронирования', async ({request}) => {
+    test('Обновление бронирования @api', async ({request}) => {
      
         await getToken(request);
 
@@ -94,7 +94,7 @@ test.describe('API-тесты для Restful_booker', () => {
         expect(responseBody).toEqual(updateRequestBody);
     });
 
-    test('Удаление бронирования', async ({request}) => {
+    test('Удаление бронирования @api', async ({request}) => {
 
         let response = await request.delete(`${baseURL}/booking/${bookingId}`, {
 

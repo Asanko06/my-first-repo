@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "playwright test",
-    "test:e2e": "playwright test tests/e2e.spec.js",
+    "test": "npx playwright test",
+    "test:ui": "npx playwright test tests --grep @ui",
+    "test:ui": "npx playwright test tests --grep @api",
     "report": "playwright show-report"
   },
   "keywords": [],

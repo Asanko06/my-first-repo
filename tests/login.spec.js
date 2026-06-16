@@ -2,7 +2,7 @@ const { test, expect } = require('@playwright/test');
 
 test.describe('Авторизация на Sauce Demo', () => {
 
-    test('Проверка успешного входа в систему', async({page}) => {
+    test('Проверка успешного входа в систему @ui', async({page}) => {
         await page.goto('https://www.saucedemo.com/');
 
         await page.getByPlaceholder('Username').fill('standard_user');
@@ -14,7 +14,7 @@ test.describe('Авторизация на Sauce Demo', () => {
         await expect(page).toHaveURL('https://www.saucedemo.com/inventory.html');
     });
 
-    test('Проверка несупешного входа в систему', async({page}) => {
+    test('Проверка несупешного входа в систему @ui', async({page}) => {
         await page.goto('https://www.saucedemo.com/');
 
         await page.locator('#user-name').fill('locked_out_user');
